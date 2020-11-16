@@ -11,9 +11,10 @@ class GnomeContainer extends Component{
     componentDidMount(){
         fetch(API_URL)
         .then(response => response.json())
-        .then(gnomesData => this.setState({
-            gnomes:[gnomesData]
-        }))
+        .then(gnomesData => {
+            console.log(gnomesData);
+            this.setState({gnomes:gnomesData.Brastlewark})
+        })
         .catch(err => console.log(err))
     }
 
